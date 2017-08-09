@@ -8,12 +8,6 @@
     </div>
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-
-
-            <form method="POST">
-                {{ csrf_token() }}
-            </form>
-
             {!! Form::open(['route' => 'article.store', 'class' => 'form-horizontal']) !!}
                 @include('article.partials.form-fields')
 
