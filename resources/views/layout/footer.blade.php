@@ -8,6 +8,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    {{  Html::script('js/script.js') }}
+    {{ Html::script('js/main.js') }}
 </body>
 </html>

@@ -15,10 +15,11 @@ class CreateArticleTable extends Migration
     {
         Schema::create('article', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('title', 200);
             $table->text('description')->nullable();
             $table->enum('status', ['active', 'inactive'])->defaults('active');
             $table->timestamps();
+            $table->index(['title', 'status']);
         });
     }
 

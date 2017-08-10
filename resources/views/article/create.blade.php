@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="col-sm-6">
             {!! Form::open(['route' => 'article.store', 'class' => 'form-horizontal']) !!}
                 @include('article.partials.form-fields')
 

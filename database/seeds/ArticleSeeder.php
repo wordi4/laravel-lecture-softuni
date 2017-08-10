@@ -25,6 +25,6 @@ class ArticleSeeder extends Seeder
             ]
         ]);
 
-        factory(App\Models\Article::class, 25)->create();
+        factory(App\Models\Article::class, 3)->create();
     }
 }

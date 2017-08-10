@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="col-sm-6">
             {!! Form::model($article, ['route' => ['article.update', $article->id], 'method' => 'PUT', 'class' => 'form-horizontal']) !!}
             @include('article.partials.form-fields')
 

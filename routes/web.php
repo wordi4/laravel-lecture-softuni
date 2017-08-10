@@ -45,3 +45,11 @@ Route::resource('article','ArticleController');
 
 // restful routes with custom name and prefix
 Route::resource('backend/article','ArticleController', ['as' => 'backend']);
+
+Route::get('get-route', function () {
+    return Response::json(['method' => 'get']);
+});
+
+Route::post('post-route', function () {
+    return Response::json(['method' => 'post']);
+});
