@@ -11,18 +11,25 @@
 |
 */
 
-Route::get('no-controller-home', function () {
-    return view('home');
+// Routing order
+Route::get('order/test', function () {
+    return 'ala bala';
 });
 
+Route::get('order/{name}', function ($name) {
+    return $name;
+});
+
+// Action route
+Route::get('/', 'DefaultController@getHome')->name('home');
+
+// Inline return routes
 Route::get('blade-examples', function () {
     return view('blade-examples');
 })->name('blade-examples');
 
-Route::get('/', 'DefaultController@getHome')->name('home');
-
-Route::get('user/{id}', function ($id) {
-    return 'User ' . $id;
+Route::get('user', function () {
+    return 'User';
 })->name('userId');
 
 Route::get('user-regex/{id}', 'DefaultController@getUserRegex')->where('id', '[0-9]+');
@@ -33,19 +40,19 @@ Route::get('admin', function () {
 })->name('adminOnly')->middleware('adminOnly');
 
 // admin prefix routs
-Route::prefix('admin')->group(function () {
-    Route::get('users', function () {
+Route::prefix('users-prefix')->group(function () {
+    Route::get('test', function () {
         // Matches The "/admin/users" URL
-        return 'Here goes the admin page';
+        return 'Users prefix test';
+    });
+
+    Route::get('test2', function () {
+        // Matches The "/admin/users" URL
+        return 'Users prefix test2';
     });
 });
 
-// restful routes
-Route::resource('article','ArticleController');
-
-// restful routes with custom name and prefix
-Route::resource('backend/article','ArticleController', ['as' => 'backend']);
-
+// Method routes
 Route::get('get-route', function () {
     return Response::json(['method' => 'get']);
 });
@@ -53,3 +60,6 @@ Route::get('get-route', function () {
 Route::post('post-route', function () {
     return Response::json(['method' => 'post']);
 });
+
+// restful routes
+Route::resource('article', 'ArticleController');

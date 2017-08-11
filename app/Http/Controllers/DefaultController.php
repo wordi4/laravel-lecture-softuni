@@ -20,6 +20,6 @@ class DefaultController extends Controller
 
     public static function getUserRegex(int $id = 0)
     {
-//        return view('master')
+        return 'User regex - ' . $id;
     }
 }

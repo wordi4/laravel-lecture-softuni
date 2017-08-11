@@ -30,12 +30,15 @@ class Article extends Model
      * @var array
      */
     public static $rules = [
-        'title'       => 'required',
-        'status'      => 'required'
+        'title'  => 'required',
+        'status' => 'required'
     ];
 
     /**
+     * Get the latest articles
+     *
      * @param int $limit
+     *
      * @return \Illuminate\Support\Collection
      */
     public static function latestArticles(int $limit)
@@ -47,6 +50,7 @@ class Article extends Model
 
     /**
      * @param int $limit
+     *
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
     public static function latestPaginatedArticles(int $limit)
